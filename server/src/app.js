@@ -1,11 +1,16 @@
 const express = require('express');
+
 const users = require('./routes/users');
-const auth = require("./routes/auth");
+const auth = require('./routes/auth');
+const enterprises = require('./routes/enterprise')
+
 const connectDB = require('./config/database');
 const errorMiddleware = require('./middlewares/error');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const cors = require('cors');
+
+const app = express();
 
 app.use(cors());
 app.use(helmet());
@@ -18,14 +23,14 @@ const limiter = rateLimit({
 
 app.use(limiter);
 
-const app = express();
-
 connectDB();
 
 app.use(express.json()); 
 
 app.use("/api/users", users);
 app.use("/api/auth", auth);
+app.use('/api/enterprises', enterprises);
+
 
 app.use(errorMiddleware);
 
