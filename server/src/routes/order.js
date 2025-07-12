@@ -7,8 +7,8 @@ const client = require("../middlewares/client");
 
 
 router.post("/:enterpriseId/:clientId/", auth, enterprise, client, orderController.createOrder);
-router.get("/:enterpriseId/:clientId/", auth, enterprise, client, orderController.getOrders);
-router.get("/:enterpriseId/:clientId/:id", auth, enterprise, client, orderController.getOrderById);
+router.get("/:enterpriseId", auth, enterprise, orderController.getOrders);
+// router.get("/:enterpriseId/:clientId/:id", auth, enterprise, client, orderController.getOrderById);
 router.put("/:enterpriseId/:clientId/:id", auth, enterprise, client, orderController.updateOrder);
 router.delete("/:enterpriseId/:clientId/:id", auth, enterprise, client, orderController.deleteOrder);
 
