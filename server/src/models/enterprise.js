@@ -17,7 +17,7 @@ const enterpriseSchema = new Schema({
         required: true,
         unique: true,
     },
-    userId: 
+    userId:
     {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
@@ -30,12 +30,12 @@ const Enterprise = mongoose.model("Enterprise", enterpriseSchema);
 
 
 function validateEnterprise(enterprise) {
-  const schema = Joi.object({
-    tradeName: Joi.string().required(),
-    corporateName: Joi.string().required(),
-    cnpj: Joi.string().required(),
-  });
-  return schema.validate(enterprise);
+    const schema = Joi.object({
+        tradeName: Joi.string().required(),
+        corporateName: Joi.string().required(),
+        cnpj: Joi.string().required(),
+    });
+    return schema.validate(enterprise);
 }
 
 module.exports = { Enterprise, validateEnterprise };
