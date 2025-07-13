@@ -13,4 +13,6 @@ export const createOrder = (order: {
 };
 export const updateOrder = (id: string, data: any) =>
   api.put(`/orders/${id}`, data);
-export const deleteOrder = (id: string) => api.delete(`/orders/${id}`);
+export const deleteOrder = (id: string, 
+  enterpriseId: string, 
+  clientId: string) => api.delete(`/orders/${enterpriseId}/${clientId}/${id}`);

@@ -26,7 +26,7 @@ export default function EnterpriseManagerPage() {
         setProducts(productsRes.data);
         setClients(clientsRes.data);
       } catch (error) {
-        console.error("Erro ao carregar dados da empresa", error);
+        console.error("Error", error);
       }
     };
 
@@ -40,7 +40,7 @@ export default function EnterpriseManagerPage() {
       const updatedProducts = await getProducts(enterpriseId);
       setProducts(updatedProducts.data);
     } catch (error) {
-      console.error("Erro ao adicionar produto", error);
+      console.error("Error", error);
     }
   };
 
@@ -51,7 +51,7 @@ export default function EnterpriseManagerPage() {
       const updatedProducts = await getProducts(enterpriseId);
       setProducts(updatedProducts.data);
     } catch (error) {
-      console.error("Erro ao deletar produto", error);
+      console.error("Error", error);
     }
   };
 
@@ -62,7 +62,7 @@ export default function EnterpriseManagerPage() {
       const updatedClients = await getClients(enterpriseId);
       setClients(updatedClients.data);
     } catch (error) {
-      console.error("Erro ao adicionar cliente", error);
+      console.error("Error", error);
     }
   };
 
@@ -73,7 +73,7 @@ export default function EnterpriseManagerPage() {
       const updatedClients = await getClients(enterpriseId);
       setClients(updatedClients.data);
     } catch (error) {
-      console.error("Erro ao deletar cliente", error);
+      console.error("Error", error);
     }
   };
 

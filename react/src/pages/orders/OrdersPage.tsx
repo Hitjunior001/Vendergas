@@ -56,7 +56,7 @@ export default function OrderPage() {
 
         setOrders(allOrders);
       } catch (error) {
-        console.error("Erro ao carregar dados", error);
+        console.error("Error", error);
       }
     };
 
@@ -74,23 +74,24 @@ export default function OrderPage() {
         ...updatedOrders.data,
       ]);
     } catch (error) {
-      console.error("Erro ao criar pedido", error);
+      console.error("Error", error);
     }
   };
 
   const handleDeleteOrder = async (
     id: string,
-    enterpriseId: string
+    enterpriseId: string,
+    clientId: string
   ) => {
     try {
-      await deleteOrder(id);
+      await deleteOrder(id, enterpriseId, clientId);
       const updatedOrders = await getOrders(enterpriseId);
       setOrders((prev) => [
         ...prev.filter((o) => o.enterpriseId !== enterpriseId),
         ...updatedOrders.data,
       ]);
     } catch (error) {
-      console.error("Erro ao deletar pedido", error);
+      console.error("Error", error);
     }
   };
 
@@ -141,7 +142,7 @@ export default function OrderPage() {
             </div>
             <button
               onClick={() =>
-                handleDeleteOrder(order._id, order.enterpriseId)
+                handleDeleteOrder(order._id, order.enterpriseId, order.clientId)
               }
               className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700"
             >
