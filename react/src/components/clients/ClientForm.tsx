@@ -22,6 +22,7 @@ export default function ClientForm({ onSubmit, initialData }: Props) {
     setLoading(true);
     await onSubmit({ clientName, clientEmail, clientPhone });
     setLoading(false);
+    
     setClientName("");
     setClientEmail("");
     setClientPhone("");

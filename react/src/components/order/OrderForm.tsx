@@ -14,6 +14,7 @@ interface Enterprise {
 interface Client {
   _id: string;
   clientName: string;
+  enterpriseId: string;
 }
 
 interface Props {
@@ -28,7 +29,6 @@ export default function OrderForm({ onSubmit, enterprises, clients }: Props) {
   const [clientId, setClientId] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Opcional: ao trocar empresa, resetar clientId para evitar cliente errado
   useEffect(() => {
     setClientId("");
   }, [enterpriseId]);
@@ -39,7 +39,6 @@ export default function OrderForm({ onSubmit, enterprises, clients }: Props) {
     setLoading(true);
     try {
       await onSubmit({ numberOrder, enterpriseId, clientId });
-      // limpar campos depois de salvar
       setNumberOrder("");
       setEnterpriseId("");
       setClientId("");
@@ -91,22 +90,15 @@ export default function OrderForm({ onSubmit, enterprises, clients }: Props) {
           value={clientId}
           onChange={(e) => setClientId(e.target.value)}
           required
-          disabled={!enterpriseId} // bloqueia se empresa não selecionada
+          disabled={!enterpriseId} 
           className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary disabled:opacity-50"
         >
           <option value="">Selecione um cliente</option>
-          {/* Se quiser, pode filtrar clientes só da empresa selecionada */}
-          {clients
-            .filter((c) => {
-              // supondo que client tenha campo enterpriseId (se tiver no seu modelo)
-              // ou simplesmente mostrar todos
-              return true; // ou c.enterpriseId === enterpriseId
-            })
-            .map((cli) => (
-              <option key={cli._id} value={cli._id}>
-                {cli.clientName}
+          {clients.filter(c => c.enterpriseId === enterpriseId).map(c => 
+              <option key={c._id} value={c._id}>
+                {c.clientName}
               </option>
-            ))}
+          )}
         </select>
       </div>
 

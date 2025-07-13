@@ -9,7 +9,6 @@ interface Props {
 export default function RequireAuth({ children }: Props) {
   const { authed } = useAuth();
   const location = useLocation();
-  console.log(authed)
 
   if (!authed) {
     return <Navigate to="/login" replace state={{ from: location }} />;

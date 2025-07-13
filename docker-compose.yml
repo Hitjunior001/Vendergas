@@ -1,0 +1,7 @@
+services:
+  frontend:
+    build: ./react
+
+
+  backend:
+    build: ./server
