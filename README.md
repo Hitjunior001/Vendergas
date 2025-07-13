@@ -83,8 +83,7 @@ Frontend do sistema **Vendergas ERP**, desenvolvido com React, utilizando Vite e
 - Tela de **cadastro de usuário**
 - Tela de **login com autenticação via token**
 - Tela de **cadastro e gerenciamento de empresas**
-- Tela de **cadastro e gerenciamento de produtos**
-- Tela de **cadastro e gerenciamento de clientes**
+- Tela de **cadastro e gerenciamento de produtos e clientes**
 - Tela de **criação e gerenciamento de pedidos**
 
 ---
