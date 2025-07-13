@@ -121,21 +121,21 @@ export default function OrderPage() {
                 Pedido #{order.numberOrder}
               </h3>
               <p className="text-gray-600">
-                Empresa:{" "}
+                Empresa:
                 {
                   enterprises.find((e) => e._id === order.enterpriseId)
                     ?.tradeName ?? "N/A"
                 }
               </p>
               <p className="text-gray-600">
-                Cliente:{" "}
+                Cliente:
                 {
                   clients.find((c) => c._id === order.clientId)
                     ?.clientName ?? "N/A"
                 }
               </p>
               <p className="text-gray-500 text-sm">
-                Criado em:{" "}
+                Criado em:
                 {new Date(order.createdAt).toLocaleString()}
               </p>
             </div>

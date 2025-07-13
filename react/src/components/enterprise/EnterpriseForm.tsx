@@ -6,9 +6,10 @@ interface Props {
   selected: Enterprise | null;
   onCreate: (data: Omit<Enterprise, "_id">) => Promise<void>;
   onUpdate: (id: string, data: Omit<Enterprise, "_id">) => Promise<void>;
+  onCancel: () => void;
 }
 
-export default function EnterpriseForm({ selected, onCreate, onUpdate }: Props) {
+export default function EnterpriseForm({ selected, onCreate, onUpdate, onCancel }: Props) {
   const [tradeName, setTradeName] = useState("");
   const [corporateName, setCorporateName] = useState("");
   const [cnpj, setCnpj] = useState("");
@@ -26,6 +27,11 @@ export default function EnterpriseForm({ selected, onCreate, onUpdate }: Props) 
     }
   }, [selected]);
 
+  const handleStopUpdate = (e: FormEvent) => {
+    e.preventDefault();
+    onCancel();
+
+  }
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -92,6 +98,13 @@ export default function EnterpriseForm({ selected, onCreate, onUpdate }: Props) 
       >
         {loading ? "Salvando..." : selected ? "Atualizar Empresa" : "Cadastrar Empresa"}
       </button>
+      {selected && 
+        <button
+          onClick={handleStopUpdate}
+          className="w-full bg-primary mt-5 text-white font-bold py-2 rounded hover:bg-primary-dark disabled:opacity-50"
+        > Para de editar </button>
+      }
+
     </form>
   );
 }

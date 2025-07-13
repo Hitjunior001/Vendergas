@@ -51,6 +51,7 @@ export default function EnterprisePage() {
                 onCreate={handleCreate}
                 onUpdate={handleUpdate}
                 selected={selected}
+                onCancel={() => setSelected(null)}
             />
             <div className= "mt-10"/>
             <EnterpriseList

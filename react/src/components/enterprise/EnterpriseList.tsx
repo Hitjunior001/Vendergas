@@ -44,7 +44,7 @@ export default function EnterpriseList({ enterprises, onEdit, onDelete, onManage
               onClick={() => onDelete(enterprise._id)}
               className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 text-sm"
             >
-              Excluir
+              Deletar
             </button>
           </div>
         </div>
