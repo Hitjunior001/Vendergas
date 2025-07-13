@@ -8,7 +8,7 @@ Um sistema ERP (Enterprise Resource Planning) completo desenvolvido para auxilia
 - **Node.js** com Express
 - **MongoDB** (BD)
 - **Joi** para validação de dados
-- **JWT** para autenticação
+- **JWT** para autenticação e proteção de rotas
 - **Bcrypt** para criptografia de senha
 - **Swagger** para documentação da API
 - **Helmet**, **Cors**, **Rate Limiting** para segurança
