@@ -20,6 +20,7 @@ interface Order {
 interface Client {
   _id: string;
   clientName: string;
+  enterpriseId: string;
 }
 
 interface Enterprise {

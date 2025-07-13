@@ -7,6 +7,9 @@ const products = require('./routes/product')
 const clients = require('./routes/client')
 const orders = require('./routes/order')
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerJsDoc = require('swagger-jsdoc');
+
 
 
 
@@ -30,6 +33,40 @@ const limiter = rateLimit({
 app.use(limiter);
 
 connectDB();
+
+const swaggerOptions = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'API',
+      version: '1.0.0',
+      description: 'API documentation',
+    },
+    servers: [
+      {
+        url: 'http://localhost:3000',
+      },
+    ],
+    components: {
+      securitySchemes: {
+        AuthToken: {
+          type: 'apiKey',
+          in: 'header',
+          name: 'x-auth-token',
+        },
+      },
+    },
+    security: [
+      {
+        AuthToken: [],
+      },
+    ],
+  },
+  apis: [__dirname + '/routes/*.js'],
+};
+
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 app.use(express.json()); 
 
