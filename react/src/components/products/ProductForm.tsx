@@ -1,14 +1,9 @@
 import { useState, type FormEvent } from "react";
-
-interface Product {
-  productName: string;
-  productValue: string;
-  productDescription: string;
-}
+import type { ProductCreate } from "../../types/types";
 
 interface Props {
-  onSubmit: (data: Product) => Promise<void>;
-  initialData?: Product;
+  onSubmit: (data: ProductCreate) => Promise<void>;
+  initialData?: ProductCreate;
 }
 
 export default function ProductForm({ onSubmit, initialData }: Props) {

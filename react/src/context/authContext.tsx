@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 import type { ReactNode } from "react";
 
 interface User {
@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     const [authed, setAuthed] = useState(false);
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
+    useEffect(() =>     {
         const savedUser = localStorage.getItem("user");
         const savedToken = localStorage.getItem("token");
 

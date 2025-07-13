@@ -1,9 +1,4 @@
-interface Enterprise {
-  _id: string;
-  tradeName: string;
-  corporateName: string;
-  cnpj: string;
-}
+import type { Enterprise } from "../../types/types";
 
 interface Props {
   enterprises: Enterprise[];

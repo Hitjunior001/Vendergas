@@ -1,9 +1,4 @@
-interface Client {
-  _id: string;
-  clientName: string;
-  clientEmail: string;
-  clientPhone: string;
-}
+import type { Client } from "../../types/types";
 
 interface Props {
   clients: Client[];

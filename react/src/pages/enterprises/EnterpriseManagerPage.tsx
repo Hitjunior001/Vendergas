@@ -7,20 +7,8 @@ import ProductForm from "../../components/products/ProductForm";
 import ProductList from "../../components/products/ProductList";
 import ClientForm from "../../components/clients/ClientForm";
 import ClientList from "../../components/clients/ClientList";
+import type { Client, ClientCreate, Product, ProductCreate } from "../../types/types";
 
-interface Product {
-  _id?: string;
-  productName: string;
-  productValue: string;
-  productDescription: string;
-}
-
-interface Client {
-  _id?: string;
-  clientName: string;
-  clientEmail: string;
-  clientPhone: string;
-}
 
 export default function EnterpriseManagerPage() {
   const { enterpriseId } = useParams<{ enterpriseId: string }>();
@@ -45,7 +33,7 @@ export default function EnterpriseManagerPage() {
     fetchAll();
   }, [enterpriseId]);
 
-  const handleAddProduct = async (product: Product) => {
+  const handleAddProduct = async (product: ProductCreate) => {
     if (!enterpriseId) return;
     try {
       await createProduct(enterpriseId, product);
@@ -67,7 +55,7 @@ export default function EnterpriseManagerPage() {
     }
   };
 
-  const handleAddClient = async (client: Client) => {
+  const handleAddClient = async (client: ClientCreate) => {
     if (!enterpriseId) return;
     try {
       await createClient(enterpriseId, client);

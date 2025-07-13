@@ -1,9 +1,4 @@
-interface Product {
-  _id: string;
-  productName: string;
-  productValue: string;
-  productDescription: string;
-}
+import type { Product } from "../../types/types";
 
 interface Props {
   products: Product[];

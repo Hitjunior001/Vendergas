@@ -1,11 +1,6 @@
 import { useEffect, useState, type FormEvent } from "react";
+import type { Enterprise } from "../../types/types";
 
-interface Enterprise {
-  _id?: string;
-  tradeName: string;
-  corporateName: string;
-  cnpj: string;
-}
 
 interface Props {
   selected: Enterprise | null;

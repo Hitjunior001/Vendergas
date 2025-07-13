@@ -8,13 +8,7 @@ import {
 import EnterpriseList from "../../components/enterprise/EnterpriseList";
 import EnterpriseForm from "../../components/enterprise/EnterpriseForm";
 import { useNavigate } from "react-router-dom";
-
-export interface Enterprise {
-    _id: string;
-    name: string;
-    tradeName: string;
-    corporateName: string;
-}
+import type { Enterprise } from "../../types/types";
 
 export default function EnterprisePage() {
     const [enterprises, setEnterprises] = useState<Enterprise[]>([]);

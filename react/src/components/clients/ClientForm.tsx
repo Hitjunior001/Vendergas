@@ -1,14 +1,9 @@
 import { useState, type FormEvent } from "react";
-
-interface Client {
-  clientName: string;
-  clientEmail: string;
-  clientPhone: string;
-}
+import type { ClientCreate } from "../../types/types";
 
 interface Props {
-  onSubmit: (data: Client) => Promise<void>;
-  initialData?: Client;
+  onSubmit: (data: ClientCreate) => Promise<void>;
+  initialData?: ClientCreate;
 }
 
 export default function ClientForm({ onSubmit, initialData }: Props) {
