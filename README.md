@@ -20,6 +20,19 @@ Um sistema ERP (Enterprise Resource Planning) completo desenvolvido para auxilia
 **Back-end:** Node, Express.
 
 ---
+
+## Funcionalidades
+
+- Autenticação de usuários via **JWT**
+- Cadastro e autenticação de usuários
+- Cadastro e gerenciamento de **empresas**, **produtos**, **clientes** e **pedidos**
+- Todas as rotas privadas protegidas com token JWT
+- Integração com **Swagger** para documentação da API
+- Middleware de segurança: Helmet, Cors, Rate Limiting
+- Pronta para execução em ambiente Docker
+
+---
+
 ## Variáveis de Ambiente
 
 Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente no seu .env
