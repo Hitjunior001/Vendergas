@@ -23,13 +23,12 @@ Um sistema ERP (Enterprise Resource Planning) completo desenvolvido para auxilia
 
 ## Funcionalidades
 
-- Autenticação de usuários via **JWT**
-- Cadastro e autenticação de usuários
-- Cadastro e gerenciamento de **empresas**, **produtos**, **clientes** e **pedidos**
-- Todas as rotas privadas protegidas com token JWT
-- Integração com **Swagger** para documentação da API
-- Middleware de segurança: Helmet, Cors, Rate Limiting
-- Pronta para execução em ambiente Docker
+- **Endpoints de autenticação via JWT**
+- Rotas de cadastro e autenticação de usuários
+- Rotas de cadastro e gerenciamento de **empresas**, **produtos**, **clientes** e **pedidos**
+- Proteção de todas as rotas privadas com **JWT**
+- Documentação da API com **Swagger**
+- Middleware de segurança com **Helmet**, **CORS** e **Rate Limiting**
 
 ---
 
