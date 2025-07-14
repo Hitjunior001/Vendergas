@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import { useAuth } from "../../hooks/useAuth";
 
@@ -19,9 +19,8 @@ function LoginPage() {
     try {
       const response = await api.post("/auth", { email, password });
       const { token, user } = response.data;
-      if(token && user)
-      {
-        
+      if (token && user) {
+
         login(user, token)
 
         await navigate("/");
@@ -103,10 +102,10 @@ function LoginPage() {
         </form>
 
         <p className="mt-6 text-sm text-center text-gray-600">
-          Não tem uma conta?{" "}
-          <a href="#" className="text-secondary font-medium hover:underline">
-            Cadastre-se
-          </a>
+          Não tem uma conta?
+          <Link to="/cadastrar" className="text-secondary font-medium hover:underline">
+            Cadastrar
+          </Link>
         </p>
       </div>
     </section>

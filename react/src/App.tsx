@@ -1,17 +1,18 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/home/HomePage";
-import LoginPage from "./pages/login/LoginPage";
+import LoginPage from "./pages/auth/LoginPage";
 import RequireAuth from "./components/requireAuth";
 import Dashboard from "./pages/dashboard/DashboardPage";
 import Navbar from "./components/navbar";
 import EnterprisePage from "./pages/enterprises/EnterprisesPage";
 import EnterpriseManagerPage from "./pages/enterprises/EnterpriseManagerPage";
 import OrderPage from "./pages/orders/OrdersPage";
+import RegisterPage from "./pages/auth/RegisterPage";
 
 export default function App() {
   const location = useLocation();
 
-  const hideNavbar = location.pathname === "/login";
+  const hideNavbar = location.pathname === "/login" || location.pathname === "/cadastrar";
 
   return (
     <>
@@ -19,6 +20,8 @@ export default function App() {
 
       <Routes>
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/cadastrar" element={<RegisterPage />} />
+
         <Route
           path="/"
           element={
