@@ -1,7 +1,7 @@
 import api from "./api";
 
 export const getOrders = (enterpriseId: string) => api.get(`/orders/${enterpriseId}`);
-export const getOrderById = (id: string) => api.get(`/orders/${id}`);
+export const getOrderById = (id: string) => api.get(`/orders/id/${id}`);
 export const createOrder = (order: {
   enterpriseId: string;
   clientId: string;

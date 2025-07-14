@@ -24,7 +24,6 @@ exports.getOrders = async (req, res) => {
 exports.getOrderById = async (req, res) => {
   const order = await Order.findOne({
     _id: req.params.id,
-    enterpriseId: req.enterprise._id,
   });
 
   if (!order) return res.status(404).send("Order not found.");
@@ -79,7 +78,6 @@ exports.getOrderProducts = async (req, res) => {
 exports.deleteOrderProduct = async (req, res) => {
   const orderProduct = await OrderProduct.findOneAndDelete({
     _id: req.params.id,
-    orderId: req.params.orderId,
   });
 
   if (!orderProduct) return res.status(404).send("Order product not found.");

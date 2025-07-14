@@ -8,6 +8,7 @@ import EnterprisePage from "./pages/enterprises/EnterprisesPage";
 import EnterpriseManagerPage from "./pages/enterprises/EnterpriseManagerPage";
 import OrderPage from "./pages/orders/OrdersPage";
 import RegisterPage from "./pages/auth/RegisterPage";
+import OrderManagerPage from "./pages/orders/OrderManagerProduct";
 
 export default function App() {
   const location = useLocation();
@@ -51,6 +52,11 @@ export default function App() {
         <Route path="/empresas/:enterpriseId" element={
           <RequireAuth>
             <EnterpriseManagerPage />
+          </RequireAuth>
+        } />
+        <Route path="/pedidos/:orderId" element={
+          <RequireAuth>
+            <OrderManagerPage />
           </RequireAuth>
         } />
       </Routes>
