@@ -127,6 +127,32 @@ Inicie o servidor
 ```
 ---
 
+## Iniciando com Docker 🐳
+
+Clone o projeto
+
+```bash
+  git clone  https://github.com/Hitjunior001/Vendergas.git
+```
+
+Entre no projeto
+
+```bash
+  cd vendergas
+```
+
+Construa o projeto no docker
+
+```bash
+  cd vendergas
+```
+
+```bash
+docker-compose up --build
+```
+
+---
+
 ## *Objetivo* 
 
 Este projeto foi desenvolvido exclusivamente por *Reginaldo de Oliveira* para fins de **avaliação técnica** em processo seletivo.  
